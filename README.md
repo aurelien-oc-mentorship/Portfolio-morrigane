@@ -1,90 +1,71 @@
-import React, { useContext, useState } from 'react';
-import { LanguageContext } from './languagecontext';
-import ProjectCard from './projectcard'; // Assurez-vous que le chemin est correct
-import ContactForm from './ContactForm'; // Importez le nouveau composant
-import nina from '../assets/nina.png';
-import ohmyfood from '../assets/ohmyfood.png';
-import argentbank from '../assets/argentbank.png';
-import kasa from '../assets/Kasa.png';
+# Getting Started with Create React App
 
-function Home() {
-  const { language } = useContext(LanguageContext);
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-  // Liste de tous les projets avec leurs catégories et images
-  const projects = [
-    { title: 'ninacarduci.github.io', category: 'React', image: nina, githubLink: 'https://github.com/Teen-raven/ninacarduci.github.io' },
-    { title: 'Ohmyfoode', category: 'React', image: ohmyfood, githubLink: 'https://github.com/Teen-raven/Ohmyfoode' },
-    { title: 'ArgentBank-website', category: 'React', image: argentbank, githubLink: 'https://github.com/Teen-raven/ArgentBank-website' },
-    { title: 'kasa-24052024', category: 'React', image: kasa, githubLink: 'https://github.com/Teen-raven/kasa-24052024' },
-  ];
-  
+## Available Scripts.
 
-  // État pour stocker la catégorie sélectionnée
-  const [selectedCategory, setSelectedCategory] = useState('all');
+In the project directory, you can run:
 
-  // Fonction de filtrage des projets par catégorie
-  const filteredProjects = selectedCategory === 'all' ? projects : projects.filter(project => project.category === selectedCategory);
+### `npm start`
 
-  // Fonction pour mettre à jour la catégorie sélectionnée
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-  // Fonction pour calculer l'âge
-  const calculateAge = (birthDate) => {
-    const today = new Date();
-    const birthDateObj = new Date(birthDate);
-    let age = today.getFullYear() - birthDateObj.getFullYear();
-    const monthDifference = today.getMonth() - birthDateObj.getMonth();
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDateObj.getDate())) {
-      age--;
-    }
-    return age;
-  };
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-  const birthDate = '1997-10-10'; // Remplacez par votre date de naissance
-  const age = calculateAge(birthDate);
+### `npm test`
 
-  return (
-    <div className="App">
-      <main>
-        <section id="introduction">
-          <article>
-            <h2>{language === 'fr' ? 'Présentation' : 'Introduction'}</h2>
-            <p>{language === 'fr' 
-              ? `Développeuse passionnée dans le domaine du web depuis le lycée, actuellement étudiante en intégration web et j'ai ${age} ans.` 
-              : `Passionate web developer since high school, currently a web integration student and I have ${age} years old.`}</p>
-            <p>{language === 'fr' ? 'Je conçois et réalise des sites web du cahier des charges à la mise en ligne.' : 'I design and build websites from specifications to launch.'}</p>
-            <p>{language === 'fr' ? "J'ai quelques projets intéressants à voir." : 'I have some interesting projects to show.'}</p>
-          </article>
-        </section>
-        
-        <p className="gallery-heading">{language === 'fr' ? 'Mes travaux' : 'My works'}</p>
-   
-        {/* Section des filtres */}
-        <div id="filterContainer">
-          <button className="filter-button" onClick={() => handleCategoryChange('all')}>{language === 'fr' ? 'Tous' : 'All'}</button>
-          <button className="filter-button" onClick={() => handleCategoryChange('Gestion de projet')}>{language === 'fr' ? 'Gestion de projet' : 'Project management'}</button>
-          <button className="filter-button" onClick={() => handleCategoryChange('Javascript')}>Javascript</button>
-          <button className="filter-button" onClick={() => handleCategoryChange('React')}>React</button>
-        </div>
- 
-        <ul className="project-grid">
-          {/* Afficher les projets filtrés */}
-          {filteredProjects.map((project, index) => (
-            <li key={index}>
-              <ProjectCard title={project.title} category={project.category} showCategory={selectedCategory === 'all'} image={project.image} githubLink={project.githubLink} language={language} />
-            </li>
-          ))}
-        </ul>
-        <section id="contact">
-          <h2>{language === 'fr' ? 'Contact' : 'Contact'}</h2>
-          <p>{language === 'fr' ? 'Vous avez un projet ? Discutons-en !' : 'Do you have a project? Let’s discuss it!'}</p>
-          <ContactForm />
-        </section>
-      </main>
-    </div>
-  );
-}
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-export default Home;
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
