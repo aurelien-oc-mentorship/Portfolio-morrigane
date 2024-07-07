@@ -5,20 +5,30 @@ import Home from './components/Home';
 import CV from './components/cv';
 import Footer from './components/footer';
 import { LanguageProvider } from './components/languagecontext';
-import './assets/App.css';
+import './assets/app.css';
+
+function Layout({ children }) {
+  return (
+    <div className="layout">
+      {children}
+    </div>
+  );
+}
 
 function App() {
   return (
     <LanguageProvider>
       <Router>
-        <div className="App">
+        <Layout>
           <Header />
-          <Routes>
+          <main>
+            <Routes>
               <Route path="/" element={<Home />} />
-             <Route path="/cv" element={<CV />} />
-          </Routes>
+              <Route path="/cv" element={<CV />} />
+            </Routes>
+          </main>
           <Footer />
-        </div>
+        </Layout>
       </Router>
     </LanguageProvider>
   );

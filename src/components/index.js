@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header>
      <h2>{language === 'fr' ? 'Mon portfolio' : 'My porfolio'}</h2>
-      <nav class="navbar">
+      <nav className="navbar">
   <a href="/">Home</a>
   <a href="/cv">CV</a>
         {renderFlag()}

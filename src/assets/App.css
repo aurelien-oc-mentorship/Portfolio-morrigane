@@ -217,7 +217,7 @@ margin: auto;
 /* styles.css */
 .project-grid {
   display: flex;
-
+	flex-wrap: wrap;
   justify-content: space-between; /* Espace réparti uniformément entre les éléments */
 }
 
@@ -792,6 +792,41 @@ article {
 	padding: 2px;
 
 }
+#filterContainer {
+	vertical-align: baseline;
+	margin-left: 30%;
+}
+
+.project-card {
+  max-width: calc(100% - 20px); /* Utilisation de calc pour calculer la largeur des cartes en fonction de la marge */
+  margin-bottom: 20px; /* Espacement en bas de chaque carte */
+  box-sizing: border-box; /* Boîte incluse pour inclure les marges et les bordures dans la largeur */
+  display: inline-block; /* Affichage en ligne pour que les cartes soient en ligne */
+  vertical-align: top; /* Alignement vertical au-dessus pour garder les cartes alignées en haut */
+}
+
+@media (max-width: 768.1px) {
+	.project-grid {
+    display: flex;
+    flex-direction: column;
+}
+.project-grid li {
+	width: 100%;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}
+.project-card {
+	width: 100%;
+	max-width: calc(70% - 20px);
+	margin-bottom: 20px;
+	box-sizing: border-box;
+	display: inline-block;
+	vertical-align: top;
+	max-height: 675px;
+}
+}
+
 
   @media (max-width: 426px) {
 	.body {

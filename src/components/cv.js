@@ -1,18 +1,15 @@
 import React, { useState, useContext, useRef } from 'react';
-import '../assets/App.css';
+import '../assets/app.css';
 import { LanguageContext } from './languagecontext';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
 import htmlDocx from 'html-docx-js/dist/html-docx';
 import { Collapse } from 'react-collapse';
-const Experience = () => {
-  const [isActive, setIsActive] = useState(false);
-  const { language } = useContext(LanguageContext);
 
-  const toggleCard = () => {
-    setIsActive(!isActive);
-  };
+const Experience = () => {
+  const [isActive] = useState(false);
+  const { language } = useContext(LanguageContext);
 
   return (
     <section className="experience">
@@ -21,7 +18,7 @@ const Experience = () => {
         <h3 className="section-title">{language === 'fr' ? 'Stage' : 'Internship'}</h3>
         <div className="card-container">
           <div className={`card ${isActive ? 'active' : ''}`}>
-            <h4>{language === 'fr' ? 'Assistante de direction' : 'Executive assistant'} · SURFRIDER ·{language === 'fr' ? 'Novembre 2021 à Décembre 2021' : 'November 2021 to December 2021'} Novembre 2021 à Décembre 2021</h4>
+            <h4>{language === 'fr' ? 'Assistante de direction' : 'Executive assistant'} · SURFRIDER ·{language === 'fr' ? 'Novembre 2021 à Décembre 2021' : 'November 2021 to December 2021'}</h4>
             <ul>
               <li>{language === 'fr' ? 'Tri de documents' : 'Sorting documents'}</li>
               <li>{language === 'fr' ? 'Pointage d’information' : 'Information scoring'}</li>
@@ -30,7 +27,7 @@ const Experience = () => {
             </ul>
           </div>
           <div className={`card ${isActive ? 'active' : ''}`}>
-            <h4>{language === 'fr' ? 'Secrétaire Comptable' : 'Accounting Secretary'}· LA CHAMBRE DES METIER ET DE L’ARTISANAT (BAYONNE) ·{language === 'fr' ? 'Juin 2022 à Juillet 2022' : 'June 2022 to July 2022'} </h4>
+            <h4>{language === 'fr' ? 'Secrétaire Comptable' : 'Accounting Secretary'} · LA CHAMBRE DES METIER ET DE L’ARTISANAT (BAYONNE) ·{language === 'fr' ? 'Juin 2022 à Juillet 2022' : 'June 2022 to July 2022'}</h4>
             <ul>
               <li>{language === 'fr' ? 'Accueil de personnes' : 'Welcoming people'}</li>
               <li>{language === 'fr' ? 'Tri du courrier' : 'Mail sorting'}</li>
@@ -41,38 +38,38 @@ const Experience = () => {
         </div>
         <h3 className="section-title">{language === 'fr' ? 'Emploi' : 'Job'}</h3>
         <div className="card-container">
-        <div className={`card ${isActive ? 'active' : ''}`}>
-        <h4>{language === 'fr' ? 'Equipière polyvalente' : 'Crew member'}· McDonald ·{language === 'fr' ? '18 octobre 2022 à 30 juillet 2023' : 'October 18, 2022 to July 30, 2023'} </h4>
+          <div className={`card ${isActive ? 'active' : ''}`}>
+            <h4>{language === 'fr' ? 'Equipière polyvalente' : 'Crew member'} · McDonald ·{language === 'fr' ? '18 octobre 2022 à 30 juillet 2023' : 'October 18, 2022 to July 30, 2023'}</h4>
             <ul>
-              <li>{language === 'fr' ? 'Coaching des nouveaux employés' : 'Coaching of new employees'} </li>
-              <li>{language === 'fr' ? 'Ménage du restaurant' : 'Restaurant cleanings'} </li>
+              <li>{language === 'fr' ? 'Coaching des nouveaux employés' : 'Coaching of new employees'}</li>
+              <li>{language === 'fr' ? 'Ménage du restaurant' : 'Restaurant cleanings'}</li>
               <li>{language === 'fr' ? 'Réassort' : 'restocking'}</li>
               <li>{language === 'fr' ? 'Prise en charge de la caisse et accueil des clients' : 'Cashier handling and customer reception'}</li>
               <li>Close</li>
             </ul>
-</div>
-<div className={`card ${isActive ? 'active' : ''}`}>
-        <h4>{language === 'fr' ? 'Vendeuse de vin à la salle de vente ' : 'Wine seller at the sales room'}
-· LOS VINEROS DE ALCOHUAZ · ALCOHUAZ (CHILI) ·{language === 'fr' ? 'Septembre 2019 à Décembre 2019' : 'September 2019 to December 2019'} </h4>
+          </div>
+          <div className={`card ${isActive ? 'active' : ''}`}>
+            <h4>{language === 'fr' ? 'Vendeuse de vin à la salle de vente ' : 'Wine seller at the sales room'} · LOS VINEROS DE ALCOHUAZ · ALCOHUAZ (CHILI) ·{language === 'fr' ? 'Septembre 2019 à Décembre 2019' : 'September 2019 to December 2019'}</h4>
             <ul>
               <li>{language === 'fr' ? 'Vente de vin' : 'Wine sale'}</li>
-              <li>{language === 'fr' ? 'Prise en charge de la caisse' : 'Checkout support'} </li>
-              <li>{language === 'fr' ? 'Réassort de vin' : 'Wine restocking'} </li>
+              <li>{language === 'fr' ? 'Prise en charge de la caisse' : 'Checkout support'}</li>
+              <li>{language === 'fr' ? 'Réassort de vin' : 'Wine restocking'}</li>
               <li>{language === 'fr' ? 'Conseil à la clientèle' : 'Customer advice'}</li>
               <li>{language === 'fr' ? 'Dégustation de vin' : 'Wine tasting'}</li>
               <li>{language === 'fr' ? 'Utilisation de différents langages pour conseiller les clients (Anglais, Espagnol, Français)' : 'Use of different languages ​​to advise customers (English, Spanish, French)'}</li>
             </ul>
-            </div>
-            <div className={`card ${isActive ? 'active' : ''}`} >
-              <h4>{language === 'fr' ? 'Equipière polyvalente' : 'Crew member'}  · FUFU RAMEN · {language === 'fr' ? '20 Novembre 2022 à 14 Octobre 2022' : 'November 20 , 2022 to October 14, 2022'}</h4><ul>
-              <li>{language === 'fr' ? 'Préparation de ramen' : 'Ramen preparation'}</li>  
+          </div>
+          <div className={`card ${isActive ? 'active' : ''}`}>
+            <h4>{language === 'fr' ? 'Equipière polyvalente' : 'Crew member'} · FUFU RAMEN · {language === 'fr' ? '20 Novembre 2022 à 14 Octobre 2022' : 'November 20, 2022 to October 14, 2022'}</h4>
+            <ul>
+              <li>{language === 'fr' ? 'Préparation de ramen' : 'Ramen preparation'}</li>
               <li>{language === 'fr' ? 'Cuisson des gyoza' : 'Cooking gyoza'}</li>
-              <li>{language === 'fr' ? 'Ménage du restaurant en fin de service' : 'Cleaning the restaurant at the end of service'}</li> 
+              <li>{language === 'fr' ? 'Ménage du restaurant en fin de service' : 'Cleaning the restaurant at the end of service'}</li>
               <li>{language === 'fr' ? 'Réassort' : 'Restocking'}</li>
-              <li>{language === 'fr' ? 'Préparation commande Uber eat' : 'Uber eat order preparation'} </li>
-       </ul>
-</div>
-      </div>
+              <li>{language === 'fr' ? 'Préparation commande Uber eat' : 'Uber eat order preparation'}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -124,7 +121,7 @@ const Langue = () => {
           </Collapse>
         </div>
         <div className='card'>
-        <h3 onClick={toggleC1} style={{ cursor: 'pointer' }}>
+          <h3 onClick={toggleC1} style={{ cursor: 'pointer' }}>
             {language === 'fr' ? 'Espagnol' : 'Spanish'} C1 {isC1Open ? '▲' : '▼'}
           </h3>
           <Collapse isOpened={isC1Open}>
@@ -163,7 +160,7 @@ const Formation = () => {
       <h2 className="section-title">{language === 'fr' ? 'Etude' : 'Study'}</h2>
       <div className="card-container">
         <div className="card">
-          <h4>{language === 'fr' ? 'Secrétaire Comptable' : 'Accounting Secretary'}· L’AFPA BAYONNE ·{language === 'fr' ? 'Janvier 2022 à Juillet 2022' : 'January 2022 to July 2022'}</h4>
+          <h4>{language === 'fr' ? 'Secrétaire Comptable' : 'Accounting Secretary'} · L’AFPA BAYONNE ·{language === 'fr' ? 'Janvier 2022 à Juillet 2022' : 'January 2022 to July 2022'}</h4>
         </div>
         <div className="card">
           <h4>Bac STMG option SIG · LYCEE LOUIS DE FOIX BAYONNE · {language === 'fr' ? 'Septembre 2015 Juillet à 2016' : 'September 2015 July to 2016'}</h4>
@@ -182,7 +179,7 @@ const Competence = () => {
         <div className="card">
           <h4>{language === 'fr' ? 'Générales' : 'General'}</h4>
           <ul>
-          <li>{language === 'fr' ? 'Réalisation de la gestion administrative du courrier' : 'Carrying out administrative mail management'}</li>
+            <li>{language === 'fr' ? 'Réalisation de la gestion administrative du courrier' : 'Carrying out administrative mail management'}</li>
             <li>{language === 'fr' ? 'Saisie des documents numériques' : 'Entering digital documents'}</li>
             <li>{language === 'fr' ? 'Classification des documents' : 'Classification of documents'}</li>
             <li>{language === 'fr' ? 'Organisation des déplacements professionnels' : 'Organization of business trips'}</li>

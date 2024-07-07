@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { LanguageContext } from './languagecontext'; // Assurez-vous que ce chemin est correct
+import { LanguageContext } from './languagecontext'; 
 import github from '../assets/Github-desktop-logo-symbol.svg.png';
 import envelope from '../assets/envelope.png';
 const Footer = () => {

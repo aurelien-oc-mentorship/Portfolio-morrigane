@@ -10,7 +10,7 @@ function ProjectCard({ title, category, showCategory, image, githubLink, languag
   const [isGithubVisible, setIsGithubVisible] = useState(false);
 
   useEffect(() => {
-    if (isExpanded) {
+    if (isExpanded && image) {
       fetch(`https://api.github.com/repos/Teen-raven/${title}/languages`)
         .then(response => response.json())
         .then(data => {
@@ -23,10 +23,10 @@ function ProjectCard({ title, category, showCategory, image, githubLink, languag
         })
         .catch(error => console.error('Error fetching data from GitHub API:', error));
     }
-  }, [isExpanded, title]);
+  }, [isExpanded, title, image]);
 
   useEffect(() => {
-    if (chartRef.current && isExpanded) {
+    if (chartRef.current && isExpanded && languages.length > 0) {
       if (chartInstance.current) {
         chartInstance.current.destroy();
       }
@@ -58,8 +58,35 @@ function ProjectCard({ title, category, showCategory, image, githubLink, languag
     setIsGithubVisible(!isExpanded);
   };
 
+  const backgroundStyle = image
+    ? {
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }
+    : { backgroundColor: '#f0f0f0' }; // Default background color
+
+  if (category === "Gestion de projet") {
+    return (
+      <div className="project-card" style={{ ...backgroundStyle, height: '300px', margin: '10px', overflow: 'hidden', border: '2px solid black', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+        <h3 style={{ cursor: 'default', backgroundColor: 'rgba(255, 255, 255, 0.5)', padding: '10px', textAlign: 'center', flexShrink: 0 }}>
+          {title}
+        </h3>
+        {showCategory && (
+          <p style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)', padding: '5px', textAlign: 'center', flexShrink: 0 }}>
+            {language === 'fr' ? 'Catégorie' : 'Category'}: {category}
+          </p>
+        )}
+        <a href={githubLink} target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', bottom: '10px', right: '10px', display: 'block' }}>
+          <img src={githubIcon} alt="Drive" style={{ width: '180px' }} />
+        </a>
+      </div>
+    );
+  }
+
   return (
-    <div className="project-card" style={{ position: 'relative', width: '200px', height: isExpanded ? 'auto' : '300px', maxHeight: '400px', margin: '10px', overflow: 'hidden', border: '2px solid black', background: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
+    <div className="project-card" style={{ ...backgroundStyle, height: isExpanded ? 'auto' : '300px', margin: '10px', overflow: 'hidden', border: '2px solid black', textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}>
       <h3 onClick={toggleExpand} style={{ cursor: 'pointer', backgroundColor: 'rgba(255, 255, 255, 0.5)', padding: '10px', textAlign: 'center', flexShrink: 0 }}>
         {title} {isExpanded ? '▲' : '▼'}
       </h3>
@@ -68,14 +95,14 @@ function ProjectCard({ title, category, showCategory, image, githubLink, languag
           {language === 'fr' ? 'Catégorie' : 'Category'}: {category}
         </p>
       )}
-      {isExpanded && (
+      {isExpanded && image && (
         <canvas
           ref={chartRef}
-          style={{ width: '100%', height: '150px', flex: 1 }}
+          style={{ width: '100%', height: '150px' }}
         ></canvas>
       )}
       <a href={githubLink} target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', bottom: '10px', right: '10px', display: isGithubVisible ? 'block' : 'none' }}>
-        <img src={githubIcon} alt="GitHub" style={{ width: '96%', height: 'auto' }} />
+        <img src={githubIcon} alt="GitHub" style={{ width: '50px', height: '50px' }} />
       </a>
     </div>
   );
