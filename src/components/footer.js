@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { LanguageContext } from './languagecontext'; 
 import github from '../assets/Github-desktop-logo-symbol.svg.png';
 import envelope from '../assets/envelope.png';
+
 const Footer = () => {
   const { language } = useContext(LanguageContext);
 

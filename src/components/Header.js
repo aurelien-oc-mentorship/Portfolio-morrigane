@@ -16,10 +16,10 @@ const Header = () => {
 
   return (
     <header>
-     <h2>{language === 'fr' ? 'Mon portfolio' : 'My porfolio'}</h2>
+      <h2>{language === 'fr' ? 'Mon portfolio' : 'My portfolio'}</h2>
       <nav className="navbar">
-  <a href="/">Home</a>
-  <a href="/cv">CV</a>
+        <a href="/">{language === 'fr' ? 'Accueil' : 'Home'}</a>
+        <a href="/cv">CV</a>
         {renderFlag()}
       </nav>
     </header>
