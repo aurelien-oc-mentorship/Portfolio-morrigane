@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/index';
 import Home from './components/Home';
-import CV from './components/CV';
-import Footer from './components/Footer';
+import CV from './components/cv';
+import Footer from './components/footer';
 import { LanguageProvider } from './components/languagecontext';
 import './assets/app.css';
 

@@ -52,7 +52,7 @@ function Home() {
     return age;
   };
 
-  const birthDate = '1997-10-10'; // Remplacez par votre date de naissance
+  const birthDate = '1997-10-10';
   const age = calculateAge(birthDate);
 
   return (
