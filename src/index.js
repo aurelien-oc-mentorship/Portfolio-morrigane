@@ -7,7 +7,7 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/<Portfolio-morrigane>">
       <App />
     </BrowserRouter>
   </React.StrictMode>
