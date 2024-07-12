@@ -21,9 +21,9 @@ function App() {
       <Router>
         <Layout>
           <Header />
-          <main>        
-            <Route path="/" element={<Home />} />
+          <main>
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/cv" element={<CV />} />
             </Routes>
           </main>
