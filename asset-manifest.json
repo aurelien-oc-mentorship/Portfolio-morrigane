@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Portfolio-morrigane/static/css/main.0f3918fa.css",
+    "main.js": "/Portfolio-morrigane/static/js/main.3bb79f2a.js",
+    "static/js/213.ed26599a.chunk.js": "/Portfolio-morrigane/static/js/213.ed26599a.chunk.js",
+    "static/js/455.38f5da21.chunk.js": "/Portfolio-morrigane/static/js/455.38f5da21.chunk.js",
+    "static/media/Kasa.png": "/Portfolio-morrigane/static/media/Kasa.40093768918d292fed2b.png",
+    "static/media/ridingcities.png": "/Portfolio-morrigane/static/media/ridingcities.5cf9731d29e7bfc651a7.png",
+    "static/media/nina.png": "/Portfolio-morrigane/static/media/nina.79d03ce00ad710199da1.png",
+    "static/media/724.png": "/Portfolio-morrigane/static/media/724.31f0c3986d79373d38c0.png",
+    "static/media/ohmyfood.png": "/Portfolio-morrigane/static/media/ohmyfood.a3edd29579e198bc49e6.png",
+    "static/media/printit.png": "/Portfolio-morrigane/static/media/printit.5c3f00e8e158f785e9d8.png",
+    "static/media/sophiebluel.png": "/Portfolio-morrigane/static/media/sophiebluel.ed6b2a2517c91c5e7f54.png",
+    "static/media/Booki.png": "/Portfolio-morrigane/static/media/Booki.7f2d0e2fd47cfd963686.png",
+    "static/media/argentbank.png": "/Portfolio-morrigane/static/media/argentbank.11dbe6eab1c068d2d638.png",
+    "static/media/Github-desktop-logo-symbol.svg.png": "/Portfolio-morrigane/static/media/Github-desktop-logo-symbol.svg.51aa851604d1704cecb9.png",
+    "static/media/menu.png": "/Portfolio-morrigane/static/media/menu.d7998bd98ca61fbbd1c5.png",
+    "static/media/crow.png": "/Portfolio-morrigane/static/media/crow.ee7de0ae5cb678d4912f.png",
+    "static/media/Morrigane Gomez Bravo.jpg": "/Portfolio-morrigane/static/media/Morrigane Gomez Bravo.cbc8a3787a62aa109960.jpg",
+    "static/media/envelope.png": "/Portfolio-morrigane/static/media/envelope.a01ce6ab2f21c82584c4.png",
+    "index.html": "/Portfolio-morrigane/index.html",
+    "main.0f3918fa.css.map": "/Portfolio-morrigane/static/css/main.0f3918fa.css.map",
+    "main.3bb79f2a.js.map": "/Portfolio-morrigane/static/js/main.3bb79f2a.js.map",
+    "213.ed26599a.chunk.js.map": "/Portfolio-morrigane/static/js/213.ed26599a.chunk.js.map",
+    "455.38f5da21.chunk.js.map": "/Portfolio-morrigane/static/js/455.38f5da21.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f3918fa.css",
+    "static/js/main.3bb79f2a.js"
+  ]
+}
