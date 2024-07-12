@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { LanguageContext } from './languagecontext';
 import flagFrance from '../assets/drapeauxfr.png';
 import flagUK from '../assets/drapeauxuk.png';
@@ -19,8 +19,12 @@ const Header = () => {
     <header>
       <h2>{language === 'fr' ? 'Mon portfolio' : 'My portfolio'}</h2>
       <nav className="navbar">
-        <Link to="/">{language === 'fr' ? 'Accueil' : 'Home'}</Link>
-        <Link to="/cv">CV</Link>
+        <NavLink to="/" exact activeClassName="active">
+          {language === 'fr' ? 'Accueil' : 'Home'}
+        </NavLink>
+        <NavLink to="/cv" activeClassName="active">
+          CV
+        </NavLink>
         {renderFlag()}
       </nav>
     </header>
@@ -28,5 +32,3 @@ const Header = () => {
 }
 
 export default Header;
-
-
