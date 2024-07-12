@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://teen-raven.github.io/Portfolio-morrigane/",
+  "homepage": "https://aurelien-mentorship-oc.github.io/Portfolio-morrigane/",
   "dependencies": {
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
