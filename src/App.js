@@ -8,7 +8,11 @@ import { LanguageProvider } from './components/languagecontext';
 import './assets/app.css';
 
 function Layout({ children }) {
-  return <div className="layout">{children}</div>;
+  return (
+    <div className="layout">
+      {children}
+    </div>
+  );
 }
 
 function App() {
